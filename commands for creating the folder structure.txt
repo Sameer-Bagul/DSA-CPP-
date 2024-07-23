@@ -1,0 +1,125 @@
+# Define the base directory
+$baseDir = "DSA_with_CPP"
+
+# Define the folder and file structure
+$structure = @{
+    "01_C++_Basics" = @(
+        "01_Syntax_and_Structure/syntax_example.cpp",
+        "02_Data_Types_and_Variables/data_types_example.cpp",
+        "03_Control_Structures/if_else_example.cpp",
+        "03_Control_Structures/for_loop_example.cpp",
+        "03_Control_Structures/while_loop_example.cpp",
+        "03_Control_Structures/do_while_loop_example.cpp",
+        "04_Functions/function_declaration_example.cpp",
+        "04_Functions/function_definition_example.cpp"
+    )
+    "02_OOP" = @(
+        "01_Classes_and_Objects/class_example.cpp",
+        "02_Constructors_and_Destructors/constructor_example.cpp",
+        "03_Inheritance/inheritance_example.cpp",
+        "04_Polymorphism/function_overloading_example.cpp",
+        "04_Polymorphism/operator_overloading_example.cpp",
+        "05_Encapsulation/encapsulation_example.cpp",
+        "06_Abstraction/abstraction_example.cpp"
+    )
+    "03_STL" = @(
+        "01_Vectors/vector_example.cpp",
+        "02_Lists/list_example.cpp",
+        "03_Stacks/stack_example.cpp",
+        "04_Queues/queue_example.cpp",
+        "05_Priority_Queues/priority_queue_example.cpp",
+        "06_Deques/deque_example.cpp",
+        "07_Sets/set_example.cpp",
+        "08_Maps/map_example.cpp",
+        "09_Algorithms/algorithms_example.cpp",
+        "10_Iterators/iterators_example.cpp"
+    )
+    "04_Basic_Data_Structures" = @(
+        "01_Arrays/1D_arrays_example.cpp",
+        "01_Arrays/2D_arrays_example.cpp",
+        "02_Linked_Lists/singly_linked_list.cpp",
+        "02_Linked_Lists/doubly_linked_list.cpp",
+        "02_Linked_Lists/circular_linked_list.cpp",
+        "03_Stacks/stack_implementation.cpp",
+        "04_Queues/simple_queue.cpp",
+        "04_Queues/circular_queue.cpp",
+        "05_Strings/string_manipulation.cpp",
+        "05_Strings/string_matching_algorithms.cpp"
+    )
+    "05_Advanced_Data_Structures" = @(
+        "01_Trees/binary_tree.cpp",
+        "01_Trees/binary_search_tree.cpp",
+        "01_Trees/avl_tree.cpp",
+        "01_Trees/segment_tree.cpp",
+        "02_Graphs/graph_representation.cpp",
+        "02_Graphs/bfs.cpp",
+        "02_Graphs/dfs.cpp",
+        "02_Graphs/dijkstra.cpp",
+        "02_Graphs/floyd_warshall.cpp",
+        "02_Graphs/mst.cpp",
+        "03_Heaps/binary_heap.cpp",
+        "03_Heaps/fibonacci_heap.cpp"
+    )
+    "06_Sorting_Algorithms" = @(
+        "bubble_sort.cpp",
+        "selection_sort.cpp",
+        "insertion_sort.cpp",
+        "merge_sort.cpp",
+        "quick_sort.cpp",
+        "heap_sort.cpp",
+        "counting_sort.cpp"
+    )
+    "07_Searching_Algorithms" = @(
+        "linear_search.cpp",
+        "binary_search.cpp",
+        "interpolation_search.cpp"
+    )
+    "08_Dynamic_Programming" = @(
+        "fibonacci.cpp",
+        "knapsack.cpp",
+        "lis.cpp",
+        "matrix_chain_multiplication.cpp"
+    )
+    "09_Greedy_Algorithms" = @(
+        "activity_selection.cpp",
+        "fractional_knapsack.cpp",
+        "huffman_coding.cpp"
+    )
+    "10_Backtracking" = @(
+        "n_queens.cpp",
+        "rat_in_a_maze.cpp",
+        "subset_sum.cpp"
+    )
+    "11_Advanced_Topics" = @(
+        "bit_manipulation.cpp",
+        "topological_sort.cpp",
+        "scc.cpp",
+        "trie.cpp",
+        "suffix_array_tree.cpp"
+    )
+    "Resources/Books" = @()
+    "Resources/Online_Courses" = @()
+    "Resources/Practice_Platforms" = @()
+    "Resources/Community" = @()
+}
+
+# Create the base directory
+if (-Not (Test-Path -Path $baseDir)) {
+    New-Item -ItemType Directory -Path $baseDir
+}
+
+# Create the folder and file structure
+foreach ($folder in $structure.Keys) {
+    foreach ($file in $structure[$folder]) {
+        $path = Join-Path -Path $baseDir -ChildPath $folder
+        $filePath = Join-Path -Path $path -ChildPath $file
+        if (-Not (Test-Path -Path $path)) {
+            New-Item -ItemType Directory -Path $path -Force
+        }
+        if (-Not (Test-Path -Path $filePath)) {
+            New-Item -ItemType File -Path $filePath -Force
+        }
+    }
+}
+
+Write-Output "Folder and file structure created successfully."
