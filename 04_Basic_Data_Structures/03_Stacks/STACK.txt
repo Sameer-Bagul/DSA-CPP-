@@ -1,0 +1,26 @@
+Stack Data Structure: 
+
+1. last in first out [LIFO] / First in last out [FILO]
+2. abstract data type 
+3. it is Linear Data Structure 
+4. first intered value will be stored at the bottom 
+5. while removing the top most value will be removed first. 
+6. The standard operation on the Stack : 
+    - push() - place an item on the stack
+    - pop() - return and then remove the top most item in the stack 
+    - isEmpty()
+    - isFull() 
+    - peek() - access the item on ith position 
+    - count() - gets the number of items in stack 
+    - change() - change the item on ith position
+    - display() - display all items in stack
+
+7. Application of Stack : 
+    - balancing of Symbols 
+    - infix to Postfix / Prefix conversion
+    - redo - undo
+    - Forward and backward features 
+    - Tower of Hanoi, tree traverals,stock span problem, histogram problem
+    -  Other applications can be Backtracking, Knight tour problem, rat in a maze, N queen problem and sudoku solver
+    - In Graph Algorithms like Topological Sorting and Strongly Connected Components
+    
